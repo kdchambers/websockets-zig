@@ -1,0 +1,6 @@
+[submodule "deps/libwebsockets"]
+	path = deps/libwebsockets
+	url = https://github.com/warmcat/libwebsockets
+[submodule "deps/yyjson"]
+	path = deps/yyjson
+	url = https://github.com/ibireme/yyjson
