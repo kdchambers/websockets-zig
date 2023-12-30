@@ -11,6 +11,9 @@ const _lws = @cImport(@cInclude("libwebsockets.h"));
 // Definitions
 //
 
+pub const LCCSCF_USE_SSL = _lws.LCCSCF_USE_SSL;
+pub const LCCSCF_PRIORITIZE_READS = _lws.LCCSCF_PRIORITIZE_READS;
+
 pub const pre: usize = 16;
 
 pub const protocols = _lws.lws_protocols;
@@ -25,6 +28,12 @@ pub const LLL_WARN = _lws.LLL_WARN;
 pub const LLL_NOTICE = _lws.LLL_NOTICE;
 
 pub const callback_http_dummy = _lws.lws_callback_http_dummy;
+pub const extension_callback_pm_deflate = _lws.lws_extension_callback_pm_deflate;
+
+pub const SERVER_OPTION_DO_SSL_GLOBAL_INIT = _lws.LWS_SERVER_OPTION_DO_SSL_GLOBAL_INIT;
+
+pub const sul_schedule = _lws.lws_sul_schedule;
+pub const sorted_usec_list_t = _lws.lws_sorted_usec_list_t;
 
 //
 // Functions
@@ -48,6 +57,8 @@ pub const lws = _lws.lws;
 pub const client_connect_info = _lws.lws_client_connect_info;
 pub const context_creation_info = _lws.lws_context_creation_info;
 pub const context = _lws.lws_context;
+pub const extension = _lws.lws_extension;
+pub const retry_bo_t = _lws.lws_retry_bo_t;
 
 pub const LogLevel = packed struct(c_int) {
     err: bool = false,

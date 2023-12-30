@@ -14,12 +14,13 @@ pub fn build(b: *std.Build) void {
     client_exe.addIncludePath(.{ .path = "deps/libwebsockets/include" });
     client_exe.addIncludePath(.{ .path = "deps/libwebsockets/build" });
     client_exe.addIncludePath(.{ .path = "deps/yyjson/src" });
-    client_exe.linkLibC();
 
     client_exe.addCSourceFile(.{ .file = .{ .path = "deps/yyjson/src/yyjson.c" }, .flags = &.{} });
     client_exe.addObjectFile(.{ .path = "deps/libwebsockets/build/lib/libwebsockets.a" });
 
+    client_exe.linkLibC();
     client_exe.linkSystemLibrary("openssl");
+    client_exe.linkSystemLibrary("z");
 
     b.installArtifact(client_exe);
 
