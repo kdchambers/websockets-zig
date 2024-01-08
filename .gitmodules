@@ -4,3 +4,6 @@
 [submodule "deps/yyjson"]
 	path = deps/yyjson
 	url = https://github.com/ibireme/yyjson
+[submodule "deps/cybotrade-indicators"]
+	path = deps/cybotrade-indicators
+	url = https://github.com/cybotrade/cybotrade-indicators
